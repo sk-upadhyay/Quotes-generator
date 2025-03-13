@@ -9,7 +9,7 @@ export default function App() {
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get("https://api.quotable.io/random");
+      const response = await axios.get("https://qapi.vercel.app/api/random");
       setQuote({
         content: response.data.content,
         author: response.data.author,
