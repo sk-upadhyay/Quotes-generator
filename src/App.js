@@ -11,7 +11,7 @@ export default function App() {
     try {
       const response = await axios.get("https://qapi.vercel.app/api/random");
       setQuote({
-        content: response.data.content,
+        content: response.data.quote,
         author: response.data.author,
       });
     } catch (error) {
