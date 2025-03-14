@@ -3,6 +3,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import "./styles.css";
 import axios from "axios";
+import CanvasBackground from "./CanvasBackground";
 
 export default function App() {
   const [quote, setQuote] = useState({ content: "", author: "" });
@@ -24,29 +25,32 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App" id="quote-box">
-      <div id="text">
-        <FaQuoteLeft />
-        {"\t"}
-        {quote.content}
-        {"\t"} <FaQuoteRight />
-      </div>
-      <div id="author">{quote.author}</div>
-      <div className="buttons">
-        <div id="tweet-quote">
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              quote.content + " - " + quote.author
-            )}`}
-            target="_blank"
-          >
-            <FaSquareXTwitter />
-          </a>
+    <>
+      <CanvasBackground />
+      <div className="App" id="quote-box">
+        <div id="text">
+          <FaQuoteLeft />
+          {"\t"}
+          {quote.content}
+          {"\t"} <FaQuoteRight />
         </div>
-        <div id="new-quote">
-          <button onClick={fetchQuote}>New Quote</button>
+        <div id="author">{quote.author}</div>
+        <div className="buttons">
+          <div id="tweet-quote">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                quote.content + " - " + quote.author
+              )}`}
+              target="_blank"
+            >
+              <FaSquareXTwitter />
+            </a>
+          </div>
+          <div id="new-quote">
+            <button onClick={fetchQuote}>New Quote</button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
