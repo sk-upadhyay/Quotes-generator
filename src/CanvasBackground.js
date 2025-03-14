@@ -27,8 +27,8 @@ const CanvasBackground = () => {
       for (let i = 0; i < dots.length; i++) {
         let dot = dots[i];
 
-        dot.x += dot.dx * 0.5;
-        dot.y += dot.dy * 0.5;
+        dot.x += dot.dx * 0.7;
+        dot.y += dot.dy * 0.7;
 
         if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
         if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
@@ -50,8 +50,8 @@ const CanvasBackground = () => {
             ctx.beginPath();
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = "rgba(180, 180, 180, 0.5)";
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = "rgba(180, 180, 180, 0.2)";
+            ctx.lineWidth = 0.9;
             ctx.stroke();
           }
         }
